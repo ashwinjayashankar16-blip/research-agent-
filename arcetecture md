@@ -1,0 +1,55 @@
+
+# AI Research Agent – System Architecture
+
+## 1. Project Overview
+
+The AI Research Agent is an autonomous research system powered by Google's Gemini API. It accepts a research goal, selects appropriate tools, processes their results and generates a report.
+
+## 2. System Architecture
+
+```mermaid
+flowchart TD
+    A[User Research Goal] --> B[Gemini AI Model]
+    B --> C[Agent Reasoning]
+    C --> D[Tool Selection]
+    D --> E[Wikipedia Search]
+    D --> F[Current Date and Time]
+    D --> G[Calculator]
+    E --> H[Tool Observations]
+    F --> H
+    G --> H
+    H --> I{Task Complete?}
+    I -->|No| C
+    I -->|Yes| J[Generate Research Report]
+    J --> K[Save Markdown Report]
+    K --> L[Final Answer]
+```
+
+## 3. Main Components
+
+- **User Input:** Accepts the research objective.
+- **Gemini AI Model:** Processes the request and determines the next action.
+- **Agent Reasoning:** Plans and coordinates the research process.
+- **Wikipedia Search:** Retrieves relevant information.
+- **Date and Time Tool:** Retrieves the current date and time.
+- **Calculator:** Performs mathematical calculations.
+- **Report Generation:** Creates and saves the final research report.
+
+## 4. Workflow
+
+1. The user submits a research goal.
+2. The agent analyses the goal.
+3. The agent selects and executes appropriate tools.
+4. Tool observations are returned to the agent.
+5. The agent decides whether additional actions are required.
+6. Once complete, the agent generates and saves a Markdown report.
+7. The final result is presented to the user.
+
+## 5. Technologies Used
+
+- Python
+- Google Gemini API
+- Requests
+- Python-dotenv
+- Wikipedia search tool
+- Calculator tool
